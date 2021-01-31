@@ -8,7 +8,10 @@ data class ContactsInfoResponse(
     val contacts: List<ContactInfo>?
 ) : RoomMapper<List<ContactEntity>> {
     override fun mapToRoomEntity(): List<ContactEntity> {
-        return contacts?.map { ContactEntity(it.name, it.dob) } ?: listOf()
+        return contacts?.map {
+            ContactEntity(it.name?.first ?: "", it.name?.last ?: "",
+                it.dob?.date ?: "", it.dob?.age ?: 0)
+        } ?: listOf()
     }
 }
 

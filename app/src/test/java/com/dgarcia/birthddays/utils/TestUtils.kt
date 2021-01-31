@@ -10,4 +10,4 @@ import okhttp3.ResponseBody
 const val FAKE_FAILURE_ERROR_CODE = 400
 val succesContactsInfoResponse = ContactsInfoResponse(arrayListOf())
 val failureResponseBody = ResponseBody.create(MediaType.parse("text"),"network error")
-val fakeContactsEntities = listOf(ContactEntity(ContactNameInfo(), ContactDobInfo()))
+val fakeContactsEntities = listOf(ContactEntity("","","",0))

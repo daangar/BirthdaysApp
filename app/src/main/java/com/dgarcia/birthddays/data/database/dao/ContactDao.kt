@@ -18,7 +18,7 @@ interface ContactDao {
     @Query("DELETE FROM $CONTACTS_TABLE_NAME")
     suspend fun deleteContacts()
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun saveContacts(contacts: List<ContactEntity>)
 
     @Query("SELECT * FROM $CONTACTS_TABLE_NAME")
